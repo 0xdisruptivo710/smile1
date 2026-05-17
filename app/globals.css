@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+/* ===================================================================
+   SMILESKIN — sistema alinhado ao Design DNA da marca.
+   Champagne quente + neutros cremosos. Zero azul, zero verde.
+   Os nomes de token (paper/ink/pine) são mapeados às cores da marca.
+=================================================================== */
+
+@theme {
+  /* Neutros cremosos */
+  --color-paper: #faf7f2;
+  --color-paper-warm: #f2ebdf;
+  --color-paper-deep: #eae1cf;
+  --color-line: #e8e0d1;
+  --color-line-strong: #d6cab1;
+
+  /* Texto */
+  --color-ink: #2e2a24;
+  --color-ink-soft: #5a5247;
+  --color-ink-faint: #8a7f70;
+  --color-graphite: #1f1f1f;
+
+  /* Marca — champagne (mapeado sobre os nomes "pine" legados) */
+  --color-champagne: #efcf88;
+  --color-champagne-soft: #f5dfa9;
+  --color-champagne-dark: #c9a560;
+  --color-pine: #c9a560;
+  --color-pine-deep: #b08c49;
+  --color-pine-soft: #efcf88;
+  --color-pine-wash: #f4ecd9;
+
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-sans: var(--font-inter-tight), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  --radius-soft: 4px;
+
+  /* Escala tipográfica fluida — razão >= 1.25 */
+  --text-eyebrow: clamp(0.72rem, 0.7rem + 0.1vw, 0.78rem);
+  --text-body-sm: clamp(0.88rem, 0.85rem + 0.15vw, 0.96rem);
+  --text-body: clamp(1.02rem, 0.98rem + 0.25vw, 1.15rem);
+  --text-lede: clamp(1.2rem, 1.05rem + 0.6vw, 1.52rem);
+  --text-h3: clamp(1.45rem, 1.2rem + 1vw, 2.1rem);
+  --text-h2: clamp(2.3rem, 1.7rem + 2.6vw, 4rem);
+  --text-h1: clamp(3.1rem, 2.1rem + 4.8vw, 7rem);
+  --text-mega: clamp(5rem, 3rem + 9vw, 11rem);
+}
+
+:root {
+  --measure: 1240px;
+  --gutter: clamp(1.25rem, 0.5rem + 3.4vw, 4.5rem);
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    background: var(--color-paper);
+  }
+
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    font-weight: 300;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  button:not(:disabled),
+  a {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: var(--color-champagne);
+    color: var(--color-graphite);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-champagne-dark);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-eyebrow);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-champagne-dark);
+  }
+
+  /* Tratamento warm-duotone das fotos de couro cabeludo */
+  .plate-img {
+    filter: grayscale(1) sepia(0.46) saturate(1.5) brightness(1.05)
+      contrast(1.04);
+  }
+
+  .plate-shade {
+    background: linear-gradient(
+      175deg,
+      transparent 45%,
+      rgba(31, 27, 22, 0.55) 100%
+    );
+  }
+
+  /* Grão fino — atmosfera de papel */
+  .grain {
+    background-image: radial-gradient(
+      rgba(31, 27, 22, 0.045) 0.5px,
+      transparent 0.6px
+    );
+    background-size: 3.5px 3.5px;
+  }
+
+  /* Grade de calibração editorial */
+  .sci-grid {
+    background-image:
+      linear-gradient(rgba(31, 27, 22, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(31, 27, 22, 0.04) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+
+  /* Campo de pontos — densidade folicular */
+  .dot-grid {
+    background-image: radial-gradient(
+      rgba(31, 27, 22, 0.12) 1.1px,
+      transparent 1.3px
+    );
+    background-size: 24px 24px;
+  }
+
+  /* Grade sobre fundo escuro */
+  .sci-grid-dark {
+    background-image:
+      linear-gradient(rgba(250, 247, 242, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(250, 247, 242, 0.05) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
