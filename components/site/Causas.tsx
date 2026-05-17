@@ -5,6 +5,7 @@ import { Container } from "./Container";
 import { SectionHeader } from "./SectionHeader";
 import { Reveal } from "@/components/motion/Reveal";
 import { Photo } from "./Photo";
+import { CicloCapilar } from "./CicloCapilar";
 import { Plus } from "./icons";
 import { StrandSection } from "./Glyphs";
 import { cn } from "@/lib/utils";
@@ -133,6 +134,10 @@ export function Causas() {
           {causas.fatores.map((fator) => (
             <FatorItem key={fator.codigo} fator={fator} />
           ))}
+        </Reveal>
+
+        <Reveal className="mt-16" delay={0.1}>
+          <CicloCapilar />
         </Reveal>
       </Container>
     </section>

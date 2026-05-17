@@ -3,6 +3,7 @@ import { SectionHeader } from "./SectionHeader";
 import { Reveal } from "@/components/motion/Reveal";
 import { Plate } from "./Plate";
 import { Photo } from "./Photo";
+import { Tricoscopia } from "./Tricoscopia";
 import { VideoPlayer } from "./VideoPlayer";
 import { CycleGlyph } from "./Glyphs";
 import { MarginNote } from "./MarginNote";
@@ -101,6 +102,11 @@ export function Investigacao() {
               </figure>
             ))}
           </div>
+        </Reveal>
+
+        {/* Microscópio virtual de tricoscopia */}
+        <Reveal className="mt-6" delay={0.1}>
+          <Tricoscopia />
         </Reveal>
 
         {/* Etapas da investigação */}
