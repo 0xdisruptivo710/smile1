@@ -2,6 +2,7 @@ import { Container } from "./Container";
 import { SectionHeader } from "./SectionHeader";
 import { Reveal } from "@/components/motion/Reveal";
 import { Plate } from "./Plate";
+import { Photo } from "./Photo";
 import { VideoPlayer } from "./VideoPlayer";
 import { CycleGlyph } from "./Glyphs";
 import { MarginNote } from "./MarginNote";
@@ -40,22 +41,35 @@ export function Investigacao() {
           dark
         />
 
-        <div className="mt-12 grid gap-x-12 gap-y-6 lg:grid-cols-12">
-          <Reveal className="lg:col-span-7" delay={0.05}>
-            <h2
-              className="font-display font-normal leading-[1.02] tracking-[-0.02em] text-paper"
-              style={{ fontSize: "var(--text-h2)" }}
-            >
-              {investigacao.titulo}
-            </h2>
-          </Reveal>
-          <Reveal className="lg:col-span-5" delay={0.12}>
-            <p
-              className="text-paper/72"
-              style={{ fontSize: "var(--text-lede)" }}
-            >
-              {investigacao.texto}
-            </p>
+        <div className="mt-12 grid items-center gap-x-12 gap-y-8 lg:grid-cols-12">
+          <div className="lg:col-span-6">
+            <Reveal delay={0.05}>
+              <h2
+                className="font-display font-normal leading-[1.02] tracking-[-0.02em] text-paper"
+                style={{ fontSize: "var(--text-h2)" }}
+              >
+                {investigacao.titulo}
+              </h2>
+            </Reveal>
+            <Reveal delay={0.12}>
+              <p
+                className="mt-5 max-w-[46ch] text-paper/72"
+                style={{ fontSize: "var(--text-lede)" }}
+              >
+                {investigacao.texto}
+              </p>
+            </Reveal>
+          </div>
+          <Reveal className="lg:col-span-6" delay={0.16}>
+            <Photo
+              src="/images/clinica/dermatoscopia-digital.jpg"
+              alt="Tricologista da SmileSkin conduzindo tricoscopia digital com dermatoscópio"
+              dark
+              marks
+              sizes="(max-width: 1024px) 100vw, 48vw"
+              caption="Dermatoscopia digital · diagnóstico"
+              className="aspect-[3/2] w-full"
+            />
           </Reveal>
         </div>
 

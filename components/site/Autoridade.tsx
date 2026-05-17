@@ -1,6 +1,6 @@
 import { Container } from "./Container";
 import { SectionHeader } from "./SectionHeader";
-import { MediaFrame } from "./MediaFrame";
+import { Photo } from "./Photo";
 import { Reveal } from "@/components/motion/Reveal";
 import { ArrowUpRight } from "./icons";
 import { autoridade } from "@/content/capilar";
@@ -33,7 +33,14 @@ export function Autoridade() {
 
         <div className="mt-14 grid gap-x-12 gap-y-10 lg:grid-cols-12">
           <Reveal className="lg:col-span-5" delay={0.05}>
-            <MediaFrame label={autoridade.moldura} ratio="aspect-[4/5]" />
+            <Photo
+              src="/images/clinica/equipamento-fotofinder.jpg"
+              alt="Estação de tricoscopia digital FotoFinder com ficha de análise capilar da SmileSkin"
+              marks
+              sizes="(max-width: 1024px) 100vw, 40vw"
+              caption="FotoFinder · tricoscopia digital"
+              className="aspect-[4/5] w-full"
+            />
           </Reveal>
 
           <Reveal className="lg:col-span-7" delay={0.12}>

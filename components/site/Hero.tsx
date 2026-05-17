@@ -1,6 +1,6 @@
 import { Container } from "./Container";
 import { ButtonLink } from "./Button";
-import { Plate } from "./Plate";
+import { Photo } from "./Photo";
 import { Reveal } from "@/components/motion/Reveal";
 import { RuleLine } from "@/components/motion/RuleLine";
 import { WhatsappIcon, ArrowDown } from "./icons";
@@ -62,13 +62,14 @@ export function Hero() {
           </div>
 
           <Reveal className="lg:col-span-5" delay={0.32}>
-            <Plate
-              src="/images/placas/placa-03.jpeg"
-              alt="Registro de tricoscopia do couro cabeludo em avaliação capilar"
+            <Photo
+              src="/images/clinica/tricoscopia-atendimento.jpg"
+              alt="Tricologista da SmileSkin realizando tricoscopia do couro cabeludo de uma paciente"
               priority
+              marks
               sizes="(max-width: 1024px) 100vw, 42vw"
-              caption="TRICOSCOPIA · REGISTRO 03"
-              className="aspect-[16/10] w-full rounded-[var(--radius-soft)] lg:aspect-[4/5]"
+              caption="Tricoscopia · atendimento clínico"
+              className="aspect-[16/10] w-full lg:aspect-[4/5]"
             />
           </Reveal>
         </div>

@@ -4,6 +4,7 @@ import { useId, useState } from "react";
 import { Container } from "./Container";
 import { SectionHeader } from "./SectionHeader";
 import { Reveal } from "@/components/motion/Reveal";
+import { Photo } from "./Photo";
 import { Plus } from "./icons";
 import { StrandSection } from "./Glyphs";
 import { cn } from "@/lib/utils";
@@ -117,7 +118,18 @@ export function Causas() {
           </Reveal>
         </div>
 
-        <Reveal className="mt-14 grid border-t border-line-strong md:grid-cols-2" delay={0.08}>
+        <Reveal className="mt-12" delay={0.1}>
+          <Photo
+            src="/images/clinica/macro-couro-cabeludo.jpg"
+            alt="Macrofotografia do couro cabeludo mostrando a saída dos fios na escala folicular"
+            marks
+            sizes="(max-width: 768px) 100vw, 90vw"
+            caption="Macro · couro cabeludo na escala folicular"
+            className="aspect-[16/9] w-full sm:aspect-[2.4/1]"
+          />
+        </Reveal>
+
+        <Reveal className="mt-10 grid border-t border-line-strong md:grid-cols-2" delay={0.08}>
           {causas.fatores.map((fator) => (
             <FatorItem key={fator.codigo} fator={fator} />
           ))}
