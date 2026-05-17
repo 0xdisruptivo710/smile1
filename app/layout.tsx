@@ -1,25 +1,29 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Inter_Tight, JetBrains_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
+// Fontes hospedadas localmente — o build não depende da rede da Google.
+const cormorant = localFont({
+  src: [
+    { path: "./fonts/cormorant-400.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/cormorant-400-italic.woff2", weight: "400", style: "italic" },
+  ],
   variable: "--font-cormorant",
   display: "swap",
-  weight: ["300", "400", "500", "600"],
-  style: ["normal", "italic"],
 });
 
-const interTight = Inter_Tight({
-  subsets: ["latin"],
+const interTight = localFont({
+  src: "./fonts/inter-tight.woff2",
   variable: "--font-inter-tight",
   display: "swap",
+  weight: "300 700",
 });
 
-const jetBrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
+const jetBrainsMono = localFont({
+  src: "./fonts/jetbrains-mono.woff2",
   variable: "--font-jetbrains-mono",
   display: "swap",
+  weight: "400 600",
 });
 
 export const metadata: Metadata = {
