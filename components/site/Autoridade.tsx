@@ -66,25 +66,28 @@ export function Autoridade() {
           </Reveal>
 
           <Reveal className="lg:col-span-7" delay={0.12}>
-            <ul className="border-t border-paper/20">
-              {autoridade.itens.map((item) => (
+            <ul className="grid border-t border-paper/20 sm:grid-cols-2 sm:gap-x-8">
+              {autoridade.itens.map((item, i) => (
                 <li
                   key={item.rotulo}
-                  className="flex items-baseline justify-between gap-6 border-b border-paper/12 py-5"
+                  className="flex flex-col gap-1 border-b border-paper/12 py-4"
                 >
-                  <span className="flex flex-col gap-0.5">
+                  <span className="flex items-baseline gap-3">
+                    <span className="font-mono text-[length:var(--text-eyebrow)] uppercase tracking-[0.16em] text-champagne">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
                     <span
-                      className="font-display font-normal tracking-[-0.01em] text-paper"
-                      style={{ fontSize: "var(--text-h3)" }}
+                      className="font-display font-normal leading-tight tracking-[-0.01em] text-paper"
+                      style={{ fontSize: "var(--text-body)" }}
                     >
                       {item.rotulo}
                     </span>
-                    <span
-                      className="text-paper/65"
-                      style={{ fontSize: "var(--text-body-sm)" }}
-                    >
-                      {item.nota}
-                    </span>
+                  </span>
+                  <span
+                    className="pl-8 text-paper/65"
+                    style={{ fontSize: "var(--text-body-sm)" }}
+                  >
+                    {item.nota}
                   </span>
                 </li>
               ))}

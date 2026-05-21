@@ -71,12 +71,12 @@ export function Agendamento() {
                 aria-hidden
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover opacity-60"
-                style={{ objectPosition: "60% center" }}
+                className="object-cover"
+                style={{ objectPosition: "65% center" }}
               />
               <span
                 aria-hidden
-                className="absolute inset-0 bg-[linear-gradient(105deg,var(--color-graphite)_0%,var(--color-graphite)_38%,rgba(31,31,31,0.85)_60%,rgba(31,31,31,0.35)_100%)]"
+                className="absolute inset-0 bg-[linear-gradient(100deg,var(--color-graphite)_0%,var(--color-graphite)_42%,rgba(19,63,79,0.55)_62%,rgba(19,63,79,0)_100%)]"
               />
               <div className="relative flex flex-1 flex-col">
                 <span className="font-mono text-[length:var(--text-eyebrow)] uppercase tracking-[0.22em] text-champagne">
