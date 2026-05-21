@@ -141,6 +141,41 @@ export function Investigacao() {
             </Reveal>
           ))}
         </div>
+
+        {/* 16 itens completos da avaliação (PDF pg 6) */}
+        <Reveal className="mt-14" delay={0.05}>
+          <span className="font-mono text-[length:var(--text-eyebrow)] uppercase tracking-[0.22em] text-champagne">
+            {investigacao.itensTitulo}
+          </span>
+          <ul className="mt-5 grid gap-x-8 gap-y-0 border-t border-paper/15 sm:grid-cols-2 lg:grid-cols-3">
+            {investigacao.itens.map((item) => (
+              <li
+                key={item}
+                className="border-b border-paper/10 py-2.5 text-paper/78"
+                style={{ fontSize: "var(--text-body)" }}
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+
+        {/* 6 critérios de estratégia */}
+        <Reveal className="mt-10 rounded-[var(--radius-soft)] border border-paper/15 bg-graphite p-6 sm:p-8" delay={0.05}>
+          <span className="font-mono text-[length:var(--text-eyebrow)] uppercase tracking-[0.22em] text-champagne">
+            {investigacao.criteriosTitulo}
+          </span>
+          <ul className="mt-5 flex flex-wrap gap-2">
+            {investigacao.criterios.map((c) => (
+              <li
+                key={c}
+                className="rounded-full border border-champagne/45 bg-paper/8 px-4 py-1.5 font-mono text-[length:var(--text-body-sm)] text-paper"
+              >
+                {c}
+              </li>
+            ))}
+          </ul>
+        </Reveal>
       </Container>
     </section>
   );

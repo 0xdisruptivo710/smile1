@@ -54,6 +54,43 @@ export function Multiprofissional() {
             </Reveal>
           ))}
         </div>
+
+        {/* Transplante + parceria salões — PDF pg 11 */}
+        <div className="mt-10 grid gap-5 lg:grid-cols-2">
+          <Reveal delay={0.05}>
+            <aside className="h-full rounded-[var(--radius-soft)] border-l-2 border-pine bg-paper p-6 sm:p-7">
+              <span className="eyebrow">
+                {multiprofissional.transplante.titulo}
+              </span>
+              <p
+                className="mt-3 text-ink-soft"
+                style={{ fontSize: "var(--text-body)" }}
+              >
+                {multiprofissional.transplante.texto}
+              </p>
+            </aside>
+          </Reveal>
+
+          <Reveal delay={0.12}>
+            <aside className="h-full rounded-[var(--radius-soft)] border border-line bg-paper p-6 sm:p-7">
+              <span className="eyebrow">{multiprofissional.beleza.titulo}</span>
+              <ul className="mt-5 grid gap-2">
+                {multiprofissional.beleza.itens.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-baseline gap-3 text-ink-soft"
+                    style={{ fontSize: "var(--text-body)" }}
+                  >
+                    <span className="font-mono text-[length:var(--text-body-sm)] text-pine">
+                      ◆
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          </Reveal>
+        </div>
       </Container>
     </section>
   );

@@ -75,6 +75,62 @@ export function Humano() {
             </ul>
           </div>
         </div>
+
+        {/* 8 áreas de impacto + alerta "isso é normal" — PDF pg 3, 11 */}
+        <Reveal className="mt-20 border-t border-line-strong pt-12" delay={0.05}>
+          <span className="eyebrow">{humano.impactoTitulo}</span>
+          <ul className="mt-5 flex flex-wrap gap-2">
+            {humano.impacto.map((item) => (
+              <li
+                key={item}
+                className="rounded-full border border-pine/40 bg-paper px-4 py-1.5 font-mono text-[length:var(--text-body-sm)] text-ink"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+
+        <Reveal className="mt-10" delay={0.05}>
+          <aside className="rounded-[var(--radius-soft)] border-l-2 border-pine bg-paper-warm p-7 sm:p-9">
+            <span className="eyebrow">{humano.alerta.eyebrow}</span>
+            <p
+              className="mt-3 font-display font-normal italic leading-[1.1] tracking-[-0.015em] text-ink"
+              style={{ fontSize: "var(--text-h2)" }}
+            >
+              “{humano.alerta.aspas}”
+            </p>
+            <p
+              className="mt-4 max-w-[68ch] text-ink-soft"
+              style={{ fontSize: "var(--text-body)" }}
+            >
+              {humano.alerta.contraponto}
+            </p>
+          </aside>
+        </Reveal>
+
+        {/* 5 áreas dos psicólogos parceiros */}
+        <Reveal className="mt-10" delay={0.05}>
+          <div className="grid gap-x-12 gap-y-6 lg:grid-cols-12">
+            <div className="lg:col-span-7">
+              <span className="eyebrow">{humano.psicologos.titulo}</span>
+            </div>
+            <ul className="grid gap-2 lg:col-span-5">
+              {humano.psicologos.itens.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-baseline gap-3 border-b border-line py-2.5 text-ink-soft"
+                  style={{ fontSize: "var(--text-body)" }}
+                >
+                  <span className="font-mono text-[length:var(--text-body-sm)] text-pine">
+                    ◆
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Reveal>
       </Container>
     </section>
   );

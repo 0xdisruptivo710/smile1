@@ -8,14 +8,19 @@ import { Autoridade } from "@/components/site/Autoridade";
 import { Divisor } from "@/components/site/Divisor";
 import { Footer } from "@/components/site/Footer";
 import { WhatsappBar } from "@/components/site/WhatsappBar";
+import { PullQuote } from "@/components/site/PullQuote";
+import { frasesDistribuidas } from "@/content/capilar";
 
 import { HeroV2 } from "@/components/site/v2/HeroV2";
 import { MultifatorialV2 } from "@/components/site/v2/MultifatorialV2";
 import { CausasV2 } from "@/components/site/v2/CausasV2";
+import { AlopeciasV2 } from "@/components/site/v2/AlopeciasV2";
+import { MegaHairV2 } from "@/components/site/v2/MegaHairV2";
 import { HumanoV2 } from "@/components/site/v2/HumanoV2";
-import { EquipeV2 } from "@/components/site/v2/EquipeV2";
+import { CurriculoV2 } from "@/components/site/v2/CurriculoV2";
 import { ParaQuemV2 } from "@/components/site/v2/ParaQuemV2";
 import { FaqV2 } from "@/components/site/v2/FaqV2";
+import { SegurancaV2 } from "@/components/site/v2/SegurancaV2";
 import { AgendamentoV2 } from "@/components/site/v2/AgendamentoV2";
 
 export const metadata = {
@@ -33,16 +38,21 @@ export default function SmileV2Page() {
         <HeroV2 />
         <MultifatorialV2 />
         <CausasV2 />
+        <PullQuote text={frasesDistribuidas[5]} tone="dark" />
         <Questionario />
         <Investigacao />
         <Protocolo />
+        <AlopeciasV2 />
+        <MegaHairV2 />
         <Multiprofissional />
         <HumanoV2 />
+        <PullQuote text={frasesDistribuidas[7]} tone="gold" />
         <Divisor />
         <Autoridade />
-        <EquipeV2 />
+        <CurriculoV2 />
         <ParaQuemV2 />
         <FaqV2 />
+        <SegurancaV2 />
         <Divisor />
         <AgendamentoV2 />
       </main>

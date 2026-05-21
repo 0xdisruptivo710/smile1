@@ -78,6 +78,35 @@ export function Protocolo() {
             </Reveal>
           ))}
         </div>
+
+        {/* 15 tecnologias específicas — PDF pg 9 */}
+        <Reveal className="mt-16 border-t border-line-strong pt-10" delay={0.05}>
+          <span className="eyebrow">{protocolo.tecnologiasTitulo}</span>
+          <p
+            className="mt-4 text-ink-soft"
+            style={{ fontSize: "var(--text-body)" }}
+          >
+            {protocolo.tecnologiasIntro}:
+          </p>
+          <ul className="mt-6 grid gap-px overflow-hidden rounded-[var(--radius-soft)] border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+            {protocolo.tecnologias.map((tec, i) => (
+              <li
+                key={tec}
+                className="flex items-baseline gap-3 bg-paper p-4"
+              >
+                <span className="font-mono text-[length:var(--text-body-sm)] text-pine">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span
+                  className="font-display font-normal leading-tight tracking-[-0.01em] text-ink"
+                  style={{ fontSize: "var(--text-body)" }}
+                >
+                  {tec}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
       </Container>
     </section>
   );

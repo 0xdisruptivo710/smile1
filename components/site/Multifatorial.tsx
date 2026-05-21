@@ -72,6 +72,69 @@ export function Multifatorial() {
             </Reveal>
           ))}
         </div>
+
+        {/* Diferencial do instituto — 10 fatores + abordagem + objetivo (PDF pg 3) */}
+        <Reveal className="mt-16 border-t border-line-strong pt-10" delay={0.05}>
+          <span className="eyebrow">O que diferencia o SS Hair Science Institute</span>
+          <p
+            className="mt-4 max-w-[72ch] text-ink-soft"
+            style={{ fontSize: "var(--text-body)" }}
+          >
+            {multifatorial.diferencial.titulo}:
+          </p>
+          <ul className="mt-5 flex flex-wrap gap-2">
+            {multifatorial.diferencial.fatores.map((f) => (
+              <li
+                key={f}
+                className="rounded-full border border-pine/40 bg-paper px-4 py-1.5 font-mono text-[length:var(--text-body-sm)] text-ink"
+              >
+                {f}
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+
+        <div className="mt-10 grid gap-x-12 gap-y-10 lg:grid-cols-2">
+          <Reveal delay={0.05}>
+            <span className="eyebrow">
+              {multifatorial.diferencial.abordagemTitulo}
+            </span>
+            <ul className="mt-5 border-t border-line">
+              {multifatorial.diferencial.abordagem.map((item) => (
+                <li
+                  key={item}
+                  className="border-b border-line py-2.5 text-ink-soft"
+                  style={{ fontSize: "var(--text-body)" }}
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+
+          <Reveal delay={0.12}>
+            <aside className="rounded-[var(--radius-soft)] border-l-2 border-pine bg-paper p-6 sm:p-7">
+              <span className="eyebrow">
+                {multifatorial.diferencial.objetivoTitulo}
+              </span>
+              <ul className="mt-5 grid gap-3">
+                {multifatorial.diferencial.objetivo.map((item, i) => (
+                  <li key={item} className="flex items-baseline gap-3">
+                    <span className="font-mono text-[length:var(--text-body-sm)] text-pine">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <p
+                      className="font-display font-normal leading-tight tracking-[-0.01em] text-ink"
+                      style={{ fontSize: "var(--text-body)" }}
+                    >
+                      {item}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          </Reveal>
+        </div>
       </Container>
     </section>
   );
