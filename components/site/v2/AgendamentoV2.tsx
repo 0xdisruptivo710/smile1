@@ -70,41 +70,56 @@ export function AgendamentoV2() {
         </div>
 
         <div className="mt-14 grid gap-5 lg:grid-cols-2">
-          {/* WhatsApp — agora em dourado sólido (inversão da V1) */}
+          {/* WhatsApp — foto da recepção como fundo, texto sobreposto (layout poster) */}
           <Reveal delay={0.05} className="flex">
-            <div className="relative flex w-full flex-col overflow-hidden rounded-[var(--radius-soft)] bg-champagne p-7 shadow-[0_30px_70px_-30px_rgba(0,0,0,0.6)] sm:p-9">
-              <span className="font-mono text-[length:var(--text-eyebrow)] uppercase tracking-[0.22em] text-ink/65">
-                Caminho mais direto
-              </span>
-              <h3
-                className="mt-3 font-display font-normal tracking-[-0.01em] text-ink"
-                style={{ fontSize: "var(--text-h2)" }}
-              >
-                {agendamento.whatsapp.titulo}
-              </h3>
-              <p
-                className="mt-3 max-w-[38ch] text-ink/80"
-                style={{ fontSize: "var(--text-body)" }}
-              >
-                {agendamento.whatsapp.texto}
-              </p>
-              <div className="mt-auto flex flex-wrap items-center gap-x-6 gap-y-3 pt-9">
-                <a
-                  href={wa}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2.5 rounded-full bg-ink px-8 py-3.5 text-[0.78rem] font-medium uppercase tracking-[0.1em] text-paper transition-all duration-200 hover:-translate-y-0.5 hover:bg-graphite"
+            <div className="relative flex aspect-[4/3] w-full flex-col justify-end overflow-hidden rounded-[var(--radius-soft)] bg-graphite p-7 shadow-[0_30px_70px_-30px_rgba(0,0,0,0.6)] sm:aspect-auto sm:min-h-[460px] sm:p-9">
+              <Image
+                src="/images/clinica/reais/recepcao-lounge-clinica.jpg"
+                alt="Recepção do SS Hair Science Institute com lounge ao lado"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+                style={{ objectPosition: "center center" }}
+              />
+              {/* Gradient de leitura — claro em cima, escuro embaixo onde o texto fica */}
+              <span
+                aria-hidden
+                className="absolute inset-0 bg-gradient-to-t from-graphite via-graphite/85 via-50% to-graphite/10"
+              />
+              <div className="relative">
+                <span className="font-mono text-[length:var(--text-eyebrow)] uppercase tracking-[0.22em] text-champagne [text-shadow:0_1px_8px_rgba(0,0,0,0.6)]">
+                  Caminho mais direto
+                </span>
+                <h3
+                  className="mt-3 font-display font-normal tracking-[-0.01em] text-paper [text-shadow:0_2px_12px_rgba(0,0,0,0.55)]"
+                  style={{ fontSize: "var(--text-h2)" }}
                 >
-                  <WhatsappIcon />
-                  {agendamento.whatsapp.cta}
-                </a>
-                <a
-                  href="#pre-avaliacao"
-                  className="inline-flex items-center gap-2 font-mono text-[length:var(--text-body-sm)] uppercase tracking-[0.1em] text-ink/70 transition-colors hover:text-ink"
+                  {agendamento.whatsapp.titulo}
+                </h3>
+                <p
+                  className="mt-3 max-w-[38ch] text-paper/85 [text-shadow:0_1px_8px_rgba(0,0,0,0.5)]"
+                  style={{ fontSize: "var(--text-body)" }}
                 >
-                  Fazer a pré-avaliação
-                  <ArrowRight />
-                </a>
+                  {agendamento.whatsapp.texto}
+                </p>
+                <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
+                  <a
+                    href={wa}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2.5 rounded-full border border-champagne bg-champagne px-8 py-3.5 text-[0.78rem] font-medium uppercase tracking-[0.1em] text-graphite shadow-[0_8px_24px_-8px_rgba(0,0,0,0.6)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-champagne-dark"
+                  >
+                    <WhatsappIcon />
+                    {agendamento.whatsapp.cta}
+                  </a>
+                  <a
+                    href="#pre-avaliacao"
+                    className="inline-flex items-center gap-2 font-mono text-[length:var(--text-body-sm)] uppercase tracking-[0.1em] text-paper/85 transition-colors hover:text-champagne [text-shadow:0_1px_6px_rgba(0,0,0,0.5)]"
+                  >
+                    Fazer a pré-avaliação
+                    <ArrowRight />
+                  </a>
+                </div>
               </div>
             </div>
           </Reveal>
