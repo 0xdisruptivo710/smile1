@@ -42,7 +42,7 @@ export function Hero() {
         </Reveal>
 
         <div className="grid items-end gap-x-12 gap-y-10 lg:grid-cols-12">
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-6">
             <Reveal delay={0.05}>
               <h1
                 className="font-display font-normal leading-[0.98] tracking-[-0.025em] text-ink"
@@ -61,15 +61,16 @@ export function Hero() {
             </Reveal>
           </div>
 
-          <Reveal className="lg:col-span-5" delay={0.32}>
+          <Reveal className="lg:col-span-6" delay={0.32}>
             <Photo
-              src="/images/clinica/tricoscopia-atendimento.jpg"
-              alt="Tricologista da SmileSkin realizando tricoscopia do couro cabeludo de uma paciente"
+              src="/images/clinica/reais/tricoscopia-dr-deli.jpg"
+              alt="Dr. Deli Brito realizando tricoscopia capilar com dermatoscópio no atendimento da SmileSkin"
               priority
               marks
-              sizes="(max-width: 1024px) 100vw, 42vw"
-              caption="Tricoscopia · atendimento clínico"
-              className="aspect-[16/10] w-full lg:aspect-[4/5]"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              caption="Dr. Deli Brito · tricoscopia em atendimento"
+              className="aspect-[16/10] w-full lg:aspect-[4/3]"
+              objectPosition="center 60%"
             />
           </Reveal>
         </div>

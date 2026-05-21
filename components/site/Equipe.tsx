@@ -34,7 +34,13 @@ export function Equipe() {
           </Reveal>
         </div>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2">
+        <div
+          className={
+            equipe.pessoas.length > 1
+              ? "mt-14 grid gap-5 sm:grid-cols-2"
+              : "mt-14 grid gap-5 sm:mx-auto sm:max-w-2xl"
+          }
+        >
           {equipe.pessoas.map((pessoa, i) => (
             <Reveal key={pessoa.nome} delay={i * 0.08}>
               <article className="flex h-full flex-col rounded-[var(--radius-soft)] border border-line bg-paper-warm p-7 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-line-strong hover:shadow-[0_18px_40px_-24px_oklch(0.248_0.018_58/0.45)] sm:p-8">

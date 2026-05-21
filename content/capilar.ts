@@ -100,7 +100,7 @@ export const causas = {
       texto:
         "Oleosidade, descamação, inflamação e sensibilidade comprometem o ambiente onde o fio nasce.",
       detalhe:
-        "Antes de pensar no fio, é preciso olhar o solo. Um couro cabeludo inflamado ou desequilibrado prejudica qualquer protocolo, por isso a saúde do couro cabeludo costuma ser a primeira frente de trabalho.",
+        "Antes de pensar no fio, é preciso olhar o solo. Um scalp inflamado ou desequilibrado prejudica qualquer protocolo, por isso a saúde do microambiente folicular costuma ser a primeira frente de trabalho.",
     },
     {
       codigo: "F7",
@@ -148,7 +148,7 @@ export const investigacao = {
       passo: "02",
       titulo: "Tricoscopia",
       texto:
-        "Análise do couro cabeludo e do fio sob ampliação: densidade, calibre, sinais de miniaturização e estado do couro cabeludo.",
+        "Análise do couro cabeludo e do fio sob ampliação: densidade, calibre, sinais de miniaturização e estado do microambiente folicular.",
     },
     {
       passo: "03",
@@ -171,7 +171,7 @@ export const protocolo = {
   label: "Protocolo individual",
   titulo: "Um plano para o seu couro cabeludo. Não um pacote para todos.",
   texto:
-    "A partir do diagnóstico, a equipe desenha um protocolo capilar individual: o que será feito, com qual frequência, em quanto tempo se reavalia. Trabalhamos com saúde do couro cabeludo, fortalecimento e gerenciamento da queda, sempre dentro do que é possível e responsável.",
+    "A partir do diagnóstico, a equipe desenha um protocolo capilar individual: o que será feito, com qual frequência, em quanto tempo se reavalia. Trabalhamos com saúde do scalp, fortalecimento folicular e gerenciamento da rarefação, sempre dentro do que é possível e responsável.",
   video: {
     label: "Ver evolução",
     titulo: "Registro de evolução, mês a mês",
@@ -237,6 +237,12 @@ export const autoridade = {
   titulo: "Estudo que continua depois que o consultório fecha.",
   texto:
     "A diferença entre uma clínica de cabelo e um instituto de tricologia é o que sustenta o atendimento por trás. A SmileSkin investe em produção de conhecimento, atualização e ensino, e isso volta para o paciente em forma de conduta melhor.",
+  distincao: {
+    eyebrow: "Tricologia clínica ≠ trabalho de salão",
+    titulo: "Duas áreas, dois objetivos. Ambos legítimos.",
+    texto:
+      "Tricologia clínica é uma área científica voltada à investigação das causas da queda capilar e à saúde do couro cabeludo. Difere fundamentalmente do trabalho de cuidado estético dos fios realizado em salões: aqui o foco é diagnóstico, protocolo individualizado e acompanhamento clínico do microambiente folicular. Salões parceiros cuidam dos fios; o instituto investiga a raiz.",
+  },
   itens: [
     { rotulo: "Produção acadêmica", nota: "Monografia e estudo continuado em tricologia" },
     { rotulo: "Conteúdo educativo", nota: "Artigos e vídeos que explicam, sem prometer" },
@@ -253,19 +259,13 @@ export const equipe = {
   label: "Quem cuida de você",
   titulo: "O cuidado tem nome e responsabilidade.",
   texto:
-    "Você não será atendido por um protocolo anônimo. A investigação e a condução do seu caso são responsabilidade de profissionais que assinam o que fazem.",
+    "Você não será atendido por um protocolo anônimo. A investigação e a condução do seu caso são assinadas pelo profissional responsável pelo instituto.",
   pessoas: [
     {
       nome: "Dr. Deli Brito",
-      papel: "Responsável clínico",
+      papel: "Responsável clínico · Tricologia",
       bio:
-        "Conduz a avaliação capilar e define a estratégia de tratamento de cada caso na SmileSkin.",
-    },
-    {
-      nome: "Dra. Vitória Barros",
-      papel: "Equipe clínica",
-      bio:
-        "Atua na condução dos protocolos capilares e no acompanhamento da evolução dos pacientes.",
+        "Farmacêutico (CRF/SP 52.349), membro da Academia Brasileira de Tricologia, com RQE em Farmácia Estética e Tricologia e mestrado em Nanotecnologia aplicada à alopecia. Conduz a avaliação capilar e define a estratégia de tratamento de cada caso no SS Hair Science Institute.",
     },
   ],
 };
@@ -292,28 +292,48 @@ export const faq = {
   titulo: "Perguntas que merecem resposta clara.",
   itens: [
     {
-      p: "A SmileSkin garante que meu cabelo vai voltar?",
-      r: "Não, e desconfie de quem garante. O fio responde dentro de limites biológicos. O que oferecemos é investigação séria, um protocolo individual e franqueza sobre o que esperar. Resultado se acompanha com registro, não se promete.",
+      p: "Queda capilar sempre significa calvície?",
+      r: "Não. Existem diferentes causas para queda capilar e afinamento dos fios.",
     },
     {
-      p: "Isso é um tratamento médico?",
-      r: "Trabalhamos com protocolos capilares, saúde do couro cabeludo, acompanhamento tricológico e gerenciamento da queda. Quando a investigação aponta para uma causa que exige conduta médica, encaminhamos para a especialidade certa. Reconhecer esse limite é parte do cuidado.",
+      p: "O estresse realmente pode causar queda capilar?",
+      r: "Sim. O emocional possui forte impacto sobre o ciclo capilar.",
     },
     {
-      p: "Por que preciso de avaliação presencial?",
-      r: "Porque tricoscopia, leitura do couro cabeludo e exame do fio não se fazem por foto de celular. A pré-avaliação on-line orienta; o diagnóstico e o protocolo nascem do encontro presencial.",
+      p: "Emagrecimento pode provocar queda de cabelo?",
+      r: "Pode. O emagrecimento acelerado atualmente é uma das causas mais frequentes de queda capilar.",
     },
     {
-      p: "Quanto tempo até perceber diferença?",
-      r: "Cabelo responde em ciclos, e ciclo leva semanas a meses. O prazo realista é definido no seu plano, a partir do diagnóstico. Qualquer promessa de resultado imediato é sinal de alerta.",
+      p: "Existem tipos diferentes de alopecia?",
+      r: "Sim. Existem diferentes tipos de alopecias e alterações capilares, cada uma com comportamentos e características específicas.",
     },
     {
-      p: "Quanto custa?",
-      r: "O investimento depende do protocolo, e o protocolo depende do diagnóstico. O valor é apresentado após a avaliação, quando já se sabe o que o seu caso pede. Sem pacote genérico vendido antes de entender.",
+      p: "Alopecia cicatricial é diferente das demais?",
+      r: "Sim. As alopecias cicatriciais podem envolver destruição folicular progressiva e frequentemente exigem investigação especializada.",
     },
     {
-      p: "Minha queda parece pequena. Vale a pena avaliar?",
-      r: "Vale, e é o melhor momento. Quanto mais cedo se entende o que está acontecendo, mais ampla é a janela de tratamento e mais simples tende a ser a conduta.",
+      p: "Alterações do couro cabeludo podem provocar queda?",
+      r: "Sim. Inflamações, oleosidade excessiva, dermatite seborreica e desequilíbrios do couro cabeludo podem impactar diretamente os fios.",
+    },
+    {
+      p: "Mega hair pode piorar a queda capilar?",
+      r: "Dependendo da técnica utilizada, do peso, da tração exercida e das características do couro cabeludo, pode haver impacto sobre os fios e folículos.",
+    },
+    {
+      p: "O instituto contraindica mega hair?",
+      r: "Não. A abordagem é individualizada, educativa e baseada em critérios técnicos.",
+    },
+    {
+      p: "Existem protocolos voltados para barba e sobrancelhas?",
+      r: "Sim. Dependendo da avaliação individualizada, podem ser elaboradas estratégias voltadas à melhora da densidade e qualidade folicular dessas regiões.",
+    },
+    {
+      p: "Existem casos em que o cabelo pode não voltar completamente?",
+      r: "Sim. Existem situações em que o potencial de recuperação pode ser parcial ou limitado.",
+    },
+    {
+      p: "Os resultados são imediatos? Os protocolos possuem garantia de resultado?",
+      r: "Não. O cabelo possui um ciclo biológico lento e a resposta costuma ocorrer de forma progressiva. Nenhum protocolo possui garantia de resultado: cada organismo responde de forma diferente e os resultados podem variar conforme múltiplos fatores individuais.",
     },
   ],
 };

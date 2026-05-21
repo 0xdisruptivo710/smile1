@@ -34,9 +34,14 @@ export function Plate({
         fill
         sizes={sizes}
         priority={priority}
-        className="plate-img object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.05]"
+        className="object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.05]"
       />
-      <span aria-hidden className="plate-shade absolute inset-0" />
+      {caption && (
+        <span
+          aria-hidden
+          className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-graphite/55 to-transparent"
+        />
+      )}
       {caption && (
         <span className="absolute bottom-3 left-3 font-mono text-[0.66rem] tracking-[0.16em] text-paper/90">
           {caption}

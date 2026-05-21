@@ -9,13 +9,14 @@ import { CycleGlyph } from "./Glyphs";
 import { MarginNote } from "./MarginNote";
 import { investigacao } from "@/content/capilar";
 
-/** Registros de tricoscopia exibidos como faixa tratada. */
+/** Registros de tricoscopia exibidos como faixa em cor natural,
+ *  ordenados por progressão anatômica: frente → topo → trás → difuso. */
 const registros = [
-  { ref: "01", regiao: "Coroa" },
-  { ref: "02", regiao: "Vértice" },
-  { ref: "04", regiao: "Partição" },
   { ref: "05", regiao: "Frontal" },
   { ref: "06", regiao: "Topo" },
+  { ref: "04", regiao: "Partição" },
+  { ref: "02", regiao: "Vértice" },
+  { ref: "01", regiao: "Coroa" },
   { ref: "08", regiao: "Difuso" },
 ];
 
@@ -63,12 +64,12 @@ export function Investigacao() {
           </div>
           <Reveal className="lg:col-span-6" delay={0.16}>
             <Photo
-              src="/images/clinica/dermatoscopia-digital.jpg"
-              alt="Tricologista da SmileSkin conduzindo tricoscopia digital com dermatoscópio"
+              src="/images/clinica/reais/dr-deli-escritorio.jpg"
+              alt="Dr. Deli Brito em seu consultório SmileSkin — biblioteca científica, troféus e estação de trabalho"
               dark
               marks
               sizes="(max-width: 1024px) 100vw, 48vw"
-              caption="Dermatoscopia digital · diagnóstico"
+              caption="Dr. Deli Brito · Responsável clínico"
               className="aspect-[3/2] w-full"
             />
           </Reveal>
@@ -77,8 +78,8 @@ export function Investigacao() {
         {/* Vídeo do atendimento na clínica */}
         <Reveal className="mt-14" delay={0.1}>
           <VideoPlayer
-            src="/videos/procedimento.mp4"
-            poster="/images/poster-procedimento.jpg"
+            src="/videos/tricoscopia-real.mp4"
+            poster="/images/poster-tricoscopia-real.jpg"
             mode="ambient"
             label={investigacao.videoLabel}
             className="aspect-video w-full"

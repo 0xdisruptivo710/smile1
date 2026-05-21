@@ -46,11 +46,6 @@ export function Multifatorial() {
             <div className="mx-auto max-w-[760px]">
               <ConvergenceDiagram />
             </div>
-            <figcaption className="mt-6 border-t border-line pt-4 text-center">
-              <span className="eyebrow text-ink-faint">
-                Passe o cursor sobre cada fator
-              </span>
-            </figcaption>
           </figure>
         </Reveal>
 

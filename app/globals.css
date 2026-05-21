@@ -1,32 +1,37 @@
 @import "tailwindcss";
 
 /* ===================================================================
-   SMILESKIN — sistema alinhado ao Design DNA da marca.
-   Champagne quente + neutros cremosos. Zero azul, zero verde.
-   Os nomes de token (paper/ink/pine) são mapeados às cores da marca.
+   SMILESKIN — sistema alinhado à identidade oficial da marca.
+   Paleta extraída de smileskin.com.br (21/05/2026):
+     petróleo  #144050 (heading/primary)
+     petróleo  #133F4F (footer/alt/overlay)
+     dourado   #EFCF87 (secondary/border/accent)
+     texto     #4D4D4D (corpo)
+   Os nomes de token legados (ink/graphite/champagne/pine) são preservados
+   para evitar reescrita em massa — só os VALORES foram retunados.
 =================================================================== */
 
 @theme {
-  /* Neutros cremosos */
+  /* Neutros cremosos — preservam o ar editorial do interior real da clínica */
   --color-paper: #faf7f2;
   --color-paper-warm: #f2ebdf;
   --color-paper-deep: #eae1cf;
   --color-line: #e8e0d1;
   --color-line-strong: #d6cab1;
 
-  /* Texto */
-  --color-ink: #2e2a24;
-  --color-ink-soft: #5a5247;
-  --color-ink-faint: #8a7f70;
-  --color-graphite: #1f1f1f;
+  /* Texto e blocos escuros — petróleo oficial da marca */
+  --color-ink: #144050;          /* heading/primary do site oficial */
+  --color-ink-soft: #4D4D4D;     /* corpo de texto do site oficial */
+  --color-ink-faint: #7A8B92;    /* faded — petróleo dessaturado */
+  --color-graphite: #133F4F;     /* footer/blocos escuros oficial */
 
-  /* Marca — champagne (mapeado sobre os nomes "pine" legados) */
-  --color-champagne: #efcf88;
+  /* Acento — dourado oficial da marca */
+  --color-champagne: #EFCF87;    /* secondary/border oficial */
   --color-champagne-soft: #f5dfa9;
   --color-champagne-dark: #c9a560;
   --color-pine: #c9a560;
   --color-pine-deep: #b08c49;
-  --color-pine-soft: #efcf88;
+  --color-pine-soft: #EFCF87;
   --color-pine-wash: #f4ecd9;
 
   --font-display: var(--font-cormorant), Georgia, serif;
@@ -112,7 +117,7 @@
   /* Grão fino — atmosfera de papel */
   .grain {
     background-image: radial-gradient(
-      rgba(31, 27, 22, 0.045) 0.5px,
+      rgba(20, 64, 80, 0.05) 0.5px,
       transparent 0.6px
     );
     background-size: 3.5px 3.5px;
@@ -121,15 +126,15 @@
   /* Grade de calibração editorial */
   .sci-grid {
     background-image:
-      linear-gradient(rgba(31, 27, 22, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(31, 27, 22, 0.04) 1px, transparent 1px);
+      linear-gradient(rgba(20, 64, 80, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(20, 64, 80, 0.045) 1px, transparent 1px);
     background-size: 72px 72px;
   }
 
   /* Campo de pontos — densidade folicular */
   .dot-grid {
     background-image: radial-gradient(
-      rgba(31, 27, 22, 0.12) 1.1px,
+      rgba(20, 64, 80, 0.13) 1.1px,
       transparent 1.3px
     );
     background-size: 24px 24px;

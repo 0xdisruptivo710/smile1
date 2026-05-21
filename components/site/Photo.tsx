@@ -13,6 +13,8 @@ interface PhotoProps {
   marks?: boolean;
   /** Verdadeiro quando a foto fica sobre fundo escuro. */
   dark?: boolean;
+  /** Foco do crop (ex.: "left", "right", "center 30%"). Default: center. */
+  objectPosition?: string;
 }
 
 /** Marca de canto fina — registro fotográfico. */
@@ -39,6 +41,7 @@ export function Photo({
   caption,
   marks,
   dark,
+  objectPosition,
 }: PhotoProps) {
   const corner = dark ? "border-paper/30" : "border-line-strong";
   return (
@@ -55,6 +58,7 @@ export function Photo({
         fill
         sizes={sizes}
         priority={priority}
+        style={objectPosition ? { objectPosition } : undefined}
         className="object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
       />
       <span
