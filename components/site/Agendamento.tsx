@@ -62,23 +62,10 @@ export function Agendamento() {
         </div>
 
         <div className="mt-14 grid gap-5 lg:grid-cols-2">
-          {/* WhatsApp — caminho direto, bloco grafite com atmosfera da clínica */}
+          {/* WhatsApp — texto à esquerda, foto da clínica à direita (sem véu) */}
           <Reveal delay={0.05} className="flex">
-            <div className="relative flex w-full flex-col overflow-hidden rounded-[var(--radius-soft)] bg-graphite p-7 sm:p-9">
-              <Image
-                src="/images/clinica/reais/lounge-clinica.jpg"
-                alt=""
-                aria-hidden
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-                style={{ objectPosition: "65% center" }}
-              />
-              <span
-                aria-hidden
-                className="absolute inset-0 bg-[linear-gradient(100deg,var(--color-graphite)_0%,var(--color-graphite)_42%,rgba(19,63,79,0.55)_62%,rgba(19,63,79,0)_100%)]"
-              />
-              <div className="relative flex flex-1 flex-col">
+            <div className="grid w-full overflow-hidden rounded-[var(--radius-soft)] sm:grid-cols-[1.05fr_1fr]">
+              <div className="flex flex-col bg-graphite p-7 sm:p-9">
                 <span className="font-mono text-[length:var(--text-eyebrow)] uppercase tracking-[0.22em] text-champagne">
                   Caminho mais direto
                 </span>
@@ -112,6 +99,16 @@ export function Agendamento() {
                     <ArrowRight />
                   </a>
                 </div>
+              </div>
+              <div className="relative min-h-[260px] sm:min-h-0">
+                <Image
+                  src="/images/clinica/reais/lounge-clinica.jpg"
+                  alt="Lounge do SS Hair Science Institute"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 25vw"
+                  className="object-cover"
+                  style={{ objectPosition: "center center" }}
+                />
               </div>
             </div>
           </Reveal>
