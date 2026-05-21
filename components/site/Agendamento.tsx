@@ -66,8 +66,8 @@ export function Agendamento() {
           <Reveal delay={0.05} className="flex">
             <div className="relative flex aspect-[4/3] w-full flex-col justify-end overflow-hidden rounded-[var(--radius-soft)] bg-graphite p-7 sm:aspect-auto sm:min-h-[460px] sm:p-9">
               <Image
-                src="/images/clinica/reais/lounge-clinica.jpg"
-                alt="Lounge do SS Hair Science Institute"
+                src="/images/clinica/reais/recepcao-lounge-clinica.jpg"
+                alt="Recepção do SS Hair Science Institute com lounge ao lado"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
