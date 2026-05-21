@@ -62,53 +62,56 @@ export function Agendamento() {
         </div>
 
         <div className="mt-14 grid gap-5 lg:grid-cols-2">
-          {/* WhatsApp — texto à esquerda, foto da clínica à direita (sem véu) */}
+          {/* WhatsApp — foto inteira da clínica como fundo, texto sobreposto */}
           <Reveal delay={0.05} className="flex">
-            <div className="grid w-full overflow-hidden rounded-[var(--radius-soft)] sm:grid-cols-[1.05fr_1fr]">
-              <div className="flex flex-col bg-graphite p-7 sm:p-9">
-                <span className="font-mono text-[length:var(--text-eyebrow)] uppercase tracking-[0.22em] text-champagne">
+            <div className="relative flex aspect-[4/3] w-full flex-col justify-end overflow-hidden rounded-[var(--radius-soft)] bg-graphite p-7 sm:aspect-auto sm:min-h-[460px] sm:p-9">
+              <Image
+                src="/images/clinica/reais/lounge-clinica.jpg"
+                alt="Lounge do SS Hair Science Institute"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+                style={{ objectPosition: "center center" }}
+              />
+              {/* Gradient de leitura — claro em cima, escuro embaixo onde está o texto */}
+              <span
+                aria-hidden
+                className="absolute inset-0 bg-gradient-to-t from-graphite via-graphite/85 via-50% to-graphite/10"
+              />
+              <div className="relative">
+                <span className="font-mono text-[length:var(--text-eyebrow)] uppercase tracking-[0.22em] text-champagne [text-shadow:0_1px_8px_rgba(0,0,0,0.6)]">
                   Caminho mais direto
                 </span>
                 <h3
-                  className="mt-3 font-display font-normal tracking-[-0.01em] text-paper"
+                  className="mt-3 font-display font-normal tracking-[-0.01em] text-paper [text-shadow:0_2px_12px_rgba(0,0,0,0.55)]"
                   style={{ fontSize: "var(--text-h2)" }}
                 >
                   {agendamento.whatsapp.titulo}
                 </h3>
                 <p
-                  className="mt-3 max-w-[38ch] text-paper/75"
+                  className="mt-3 max-w-[38ch] text-paper/85 [text-shadow:0_1px_8px_rgba(0,0,0,0.5)]"
                   style={{ fontSize: "var(--text-body)" }}
                 >
                   {agendamento.whatsapp.texto}
                 </p>
-                <div className="mt-auto flex flex-wrap items-center gap-x-6 gap-y-3 pt-9">
+                <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
                   <a
                     href={wa}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2.5 rounded-full border border-champagne bg-champagne px-8 py-3.5 text-[0.78rem] font-medium uppercase tracking-[0.1em] text-graphite transition-all duration-200 hover:-translate-y-0.5 hover:bg-champagne-dark"
+                    className="inline-flex items-center justify-center gap-2.5 rounded-full border border-champagne bg-champagne px-8 py-3.5 text-[0.78rem] font-medium uppercase tracking-[0.1em] text-graphite shadow-[0_8px_24px_-8px_rgba(0,0,0,0.6)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-champagne-dark"
                   >
                     <WhatsappIcon />
                     {agendamento.whatsapp.cta}
                   </a>
                   <a
                     href="#pre-avaliacao"
-                    className="inline-flex items-center gap-2 font-mono text-[length:var(--text-body-sm)] uppercase tracking-[0.1em] text-paper/70 transition-colors hover:text-champagne"
+                    className="inline-flex items-center gap-2 font-mono text-[length:var(--text-body-sm)] uppercase tracking-[0.1em] text-paper/85 transition-colors hover:text-champagne [text-shadow:0_1px_6px_rgba(0,0,0,0.5)]"
                   >
                     Fazer a pré-avaliação
                     <ArrowRight />
                   </a>
                 </div>
-              </div>
-              <div className="relative min-h-[260px] sm:min-h-0">
-                <Image
-                  src="/images/clinica/reais/lounge-clinica.jpg"
-                  alt="Lounge do SS Hair Science Institute"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 25vw"
-                  className="object-cover"
-                  style={{ objectPosition: "center center" }}
-                />
               </div>
             </div>
           </Reveal>
