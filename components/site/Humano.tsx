@@ -29,52 +29,59 @@ export function Humano() {
           </Reveal>
         </div>
 
-        <div className="mt-16 grid items-center gap-x-12 gap-y-10 lg:grid-cols-12">
-          {/* Depoimento em vídeo */}
-          <Reveal className="lg:col-span-5" delay={0.05}>
-            <div className="mx-auto max-w-[360px] lg:ml-0">
-              <VideoPlayer
-                src="/videos/depoimento.mp4"
-                poster="/images/poster-depoimento.jpg"
-                mode="player"
-                label={humano.depoimento.label}
-                className="aspect-[9/16] w-full"
-              />
+        {/* Grade de 3 depoimentos em vídeo */}
+        <div className="mt-16">
+          <Reveal delay={0.05}>
+            <span className="eyebrow">{humano.depoimento.eyebrow}</span>
+          </Reveal>
+          <div className="mt-6 grid gap-5 sm:grid-cols-3">
+            {humano.depoimentos.map((dep, i) => (
+              <Reveal key={dep.slug} delay={i * 0.08}>
+                <figure className="flex flex-col gap-3">
+                  <VideoPlayer
+                    src={dep.src}
+                    poster={dep.poster}
+                    mode="player"
+                    label={dep.label}
+                    className="aspect-[9/16] w-full"
+                  />
+                  <figcaption
+                    className="text-ink-faint"
+                    style={{ fontSize: "var(--text-body-sm)" }}
+                  >
+                    {dep.legenda}
+                  </figcaption>
+                </figure>
+              </Reveal>
+            ))}
+          </div>
+          <p
+            className="mt-6 max-w-[60ch] text-ink-faint"
+            style={{ fontSize: "var(--text-body-sm)" }}
+          >
+            {humano.depoimento.nota}
+          </p>
+        </div>
+
+        {/* Pontos editoriais — em linha horizontal */}
+        <Reveal className="mt-12 grid gap-x-10 border-t border-line sm:grid-cols-3" delay={0.05}>
+          {humano.pontos.map((ponto, i) => (
+            <div
+              key={ponto}
+              className="flex items-baseline gap-4 border-b border-line py-5 sm:border-b-0 sm:[&:not(:first-child)]:border-l sm:[&:not(:first-child)]:pl-6"
+            >
+              <span className="font-mono text-[length:var(--text-body-sm)] text-pine">
+                {String(i + 1).padStart(2, "0")}
+              </span>
               <p
-                className="mt-3 text-ink-faint"
-                style={{ fontSize: "var(--text-body-sm)" }}
+                className="font-display font-normal leading-[1.2] tracking-[-0.01em] text-ink"
+                style={{ fontSize: "var(--text-h3)" }}
               >
-                {humano.depoimento.nota}
+                {ponto}
               </p>
             </div>
-          </Reveal>
-
-          {/* Pontos */}
-          <div className="lg:col-span-7">
-            <Reveal delay={0.1}>
-              <span className="eyebrow">{humano.depoimento.eyebrow}</span>
-            </Reveal>
-            <ul className="mt-5 border-t border-line">
-              {humano.pontos.map((ponto, i) => (
-                <Reveal
-                  key={ponto}
-                  delay={0.12 + i * 0.07}
-                  className="flex items-baseline gap-4 border-b border-line py-5"
-                >
-                  <span className="font-mono text-[length:var(--text-body-sm)] text-pine">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <p
-                    className="font-display font-normal leading-[1.2] tracking-[-0.01em] text-ink"
-                    style={{ fontSize: "var(--text-h3)" }}
-                  >
-                    {ponto}
-                  </p>
-                </Reveal>
-              ))}
-            </ul>
-          </div>
-        </div>
+          ))}
+        </Reveal>
 
         {/* 8 áreas de impacto + alerta "isso é normal" — PDF pg 3, 11 */}
         <Reveal className="mt-20 border-t border-line-strong pt-12" delay={0.05}>

@@ -359,8 +359,34 @@ export const humano = {
   depoimento: {
     label: "Ver depoimento",
     eyebrow: "Na voz de quem viveu",
-    nota: "Depoimento de paciente em acompanhamento na SmileSkin.",
+    nota: "Depoimentos de pacientes em acompanhamento na SmileSkin.",
   },
+  depoimentos: [
+    {
+      slug: "led-1",
+      src: "/videos/depoimento-led-1.mp4",
+      poster: "/images/poster-depoimento-led-1.jpg",
+      label: "Em fotobiomodulação capilar",
+      legenda:
+        "Paciente em sessão de LED capilar, durante o protocolo de fortalecimento.",
+    },
+    {
+      slug: "estudio",
+      src: "/videos/depoimento-estudio.mp4",
+      poster: "/images/poster-depoimento-estudio.jpg",
+      label: "Depoimento em estúdio",
+      legenda:
+        "Relato sobre a percepção do acompanhamento clínico ao longo do protocolo.",
+    },
+    {
+      slug: "led-2",
+      src: "/videos/depoimento-led-2.mp4",
+      poster: "/images/poster-depoimento-led-2.jpg",
+      label: "Em fotobiomodulação capilar",
+      legenda:
+        "Paciente em sessão de LED capilar, em acompanhamento na clínica.",
+    },
+  ],
 };
 
 export const autoridade = {

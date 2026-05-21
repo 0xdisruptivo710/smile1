@@ -38,7 +38,7 @@ export function HumanoV2() {
           <span className="h-px flex-1 bg-ink/30" />
         </div>
 
-        <div className="mt-14 grid items-center gap-x-14 gap-y-12 lg:grid-cols-12">
+        <div className="mt-14 grid gap-x-14 gap-y-10 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <Reveal delay={0.05}>
               <h2
@@ -56,50 +56,68 @@ export function HumanoV2() {
                 {humano.texto}
               </p>
             </Reveal>
-
-            <ul className="mt-10 border-t border-ink/25">
-              {humano.pontos.map((ponto, i) => (
-                <Reveal
-                  key={ponto}
-                  delay={0.12 + i * 0.07}
-                  className="flex items-baseline gap-4 border-b border-ink/20 py-5"
-                >
-                  <span className="font-mono text-[length:var(--text-body-sm)] text-ink/60">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <p
-                    className="font-display font-normal leading-[1.2] tracking-[-0.01em] text-ink"
-                    style={{ fontSize: "var(--text-h3)" }}
-                  >
-                    {ponto}
-                  </p>
-                </Reveal>
-              ))}
-            </ul>
           </div>
 
-          <Reveal className="lg:col-span-5" delay={0.05}>
-            <div className="relative mx-auto max-w-[380px] lg:ml-0">
-              {/* Moldura petróleo offsetada criando profundidade editorial */}
-              <span
-                aria-hidden
-                className="absolute -inset-3 -z-10 rounded-[var(--radius-soft)] border border-ink/35"
-              />
-              <VideoPlayer
-                src="/videos/depoimento.mp4"
-                poster="/images/poster-depoimento.jpg"
-                mode="player"
-                label={humano.depoimento.label}
-                className="aspect-[9/16] w-full"
-              />
-              <p
-                className="mt-3 font-mono text-[length:var(--text-eyebrow)] uppercase tracking-[0.18em] text-ink/65"
+          <ul className="lg:col-span-5">
+            {humano.pontos.map((ponto, i) => (
+              <Reveal
+                key={ponto}
+                delay={0.12 + i * 0.07}
+                className="flex items-baseline gap-4 border-b border-ink/20 py-5 first:border-t first:border-ink/25"
               >
-                {humano.depoimento.eyebrow} · {humano.depoimento.nota}
-              </p>
-            </div>
-          </Reveal>
+                <span className="font-mono text-[length:var(--text-body-sm)] text-ink/60">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <p
+                  className="font-display font-normal leading-[1.2] tracking-[-0.01em] text-ink"
+                  style={{ fontSize: "var(--text-h3)" }}
+                >
+                  {ponto}
+                </p>
+              </Reveal>
+            ))}
+          </ul>
         </div>
+
+        {/* Grade de 3 depoimentos em vídeo */}
+        <Reveal className="mt-14" delay={0.05}>
+          <span className="font-mono text-[length:var(--text-eyebrow)] uppercase tracking-[0.22em] text-ink">
+            {humano.depoimento.eyebrow}
+          </span>
+        </Reveal>
+        <div className="mt-6 grid gap-5 sm:grid-cols-3">
+          {humano.depoimentos.map((dep, i) => (
+            <Reveal key={dep.slug} delay={i * 0.08}>
+              <figure className="flex flex-col gap-3">
+                <div className="relative">
+                  {/* Moldura offsetada petróleo — assinatura editorial V2 */}
+                  <span
+                    aria-hidden
+                    className="absolute -inset-2.5 -z-10 rounded-[var(--radius-soft)] border border-ink/35"
+                  />
+                  <VideoPlayer
+                    src={dep.src}
+                    poster={dep.poster}
+                    mode="player"
+                    label={dep.label}
+                    className="aspect-[9/16] w-full"
+                  />
+                </div>
+                <figcaption
+                  className="mt-2 text-ink/72"
+                  style={{ fontSize: "var(--text-body-sm)" }}
+                >
+                  {dep.legenda}
+                </figcaption>
+              </figure>
+            </Reveal>
+          ))}
+        </div>
+        <p
+          className="mt-6 font-mono text-[length:var(--text-eyebrow)] uppercase tracking-[0.18em] text-ink/65"
+        >
+          {humano.depoimento.nota}
+        </p>
       </Container>
     </section>
   );
